@@ -2,6 +2,11 @@ import React from 'react';
 import './navbar.css'; // Import the corresponding CSS file
 
 const Navbar = () => {
+    const scrollToMCQ = () => {
+        const mcqSection = document.getElementById('mcq-section');
+        mcqSection.scrollIntoView({ behavior: 'smooth' });
+      };
+    
   return (
     <nav className="navbar">
       <div className="navbar-brand">Learn For JEE in an Interactive way! &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="#"> Flashcards </a> &nbsp; &nbsp;  <a href="#"> MCQ's </a> </div>

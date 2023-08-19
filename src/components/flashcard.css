@@ -12,11 +12,13 @@
   .flashcard-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Change from 'center' to 'flex-start' */
     flex-wrap: wrap; /* Allow wrapping to multiple lines */
     max-width: 1000px; /* Adjust the maximum width as needed */
     margin: 0 auto; /* Center the container */
+    padding-top: 20px; /* Add some top padding to create space from the navbar */
   }
+  
   
   .flashcard-inner {
     width: 100%;
@@ -48,9 +50,43 @@
     transform: rotateY(180deg);
     background-color: #a0d2eb;
   }
-  .flashcard-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Adjust the height as needed */
-}
+
+.mcq {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+  }
+  
+  .mcq-question {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .mcq-options {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .mcq-options li {
+    margin: 5px 0;
+    cursor: pointer;
+  }
+  
+  .mcq-options li.correct {
+    background-color: #b9e58c; /* Highlight color for correct option */
+  }
+  
+  .mcq-options li.incorrect {
+    background-color: #ffb3b3; /* Highlight color for incorrect option */
+  }
+  
+  .mcq-options li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  
+  .mcq-options li:hover {
+    background-color: #f0f0f0;
+  }
+  

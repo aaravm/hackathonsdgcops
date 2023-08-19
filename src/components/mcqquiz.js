@@ -1,23 +1,22 @@
-// src/components/MCQComponent.js
-
 import React, { useState } from 'react';
 
-const MCQComponent = ({ question, options }) => {
-  const [selectedOption, setSelectedOption] = useState('');
 
-  const handleOptionSelect = (option) => {
-    setSelectedOption(option);
+const MCQComponent = ({ question, options, answer }) => {
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
+
+  const handleOptionClick = (option) => {
+    setSelectedAnswer(option);
   };
 
   return (
-    <div>
-      <h3>{question}</h3>
-      <ul>
+    <div className="mcq">
+      <div className="mcq-question">{question}</div>
+      <ul className="mcq-options">
         {options.map((option, index) => (
           <li
             key={index}
-            onClick={() => handleOptionSelect(option)}
-            className={selectedOption === option ? 'selected' : ''}
+            onClick={() => handleOptionClick(option)}
+            className={selectedAnswer === option ? (option === answer ? 'correct' : 'incorrect') : ''}
           >
             {option}
           </li>

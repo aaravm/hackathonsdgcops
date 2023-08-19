@@ -13,17 +13,28 @@ const App = () => {
     { question: 'A ray of light coming from the point (1, 2) is reflected at a point A on the x–axis and then passes through the point (5, 3). The coordinates of the point A are (x, y). Find 5x + y.', answer: '13' },
     
   ];
-  const mcqData = {
-    question: 'What is the capital of France?',
-    options: ['Berlin', 'London', 'Paris', 'Madrid'],
-  };
+  const mcq = [
+    {
+      question: '4.4 g of CO2 contains how many liters of CO2 at S.T.P.?',
+      answer: '2.24 L',
+      options: ['2.4L', '2.24 L', '44 L', '22.4 L'],
+    },
+    {
+      question: 'What is 2 + 2?',
+      answer: '4',
+      options: ['2', '3', '4', '5'],
+    },
+    // Add more flashcards here
+  ];
+
+
 
   return (
     <div className="app">
       <Navbar />
 
-      {/* <h1 className='text-center '>Learn for JEE using Flashcards!!</h1> */}
-      <div className='fs-2 flash'> Flashcards </div>
+      <h1 className='text-center '>Learn for JEE using Flashcards!!</h1>
+      <h2> Flashcards </h2>
       <div className="flashcard-container flex">
         {flashcards.map((flashcard, index) => (
           <Flashcard
@@ -33,8 +44,15 @@ const App = () => {
           />
         ))}
       </div>
-      {/* <MCQComponent question={mcqData.question} options={mcqData.options} /> */}
+      <h2>MCQ's</h2>
+      <MCQComponent
+        question={mcq[0].question}
+        options={mcq[0].options}
+        answer={mcq[0].answer}
+      />
+      
     </div>
+
     
   );
 };
