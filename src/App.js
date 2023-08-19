@@ -3,7 +3,7 @@ import './App.css';
 import './components/flashcard.css'
 import Flashcard from './components/Flashcard'; 
 import Navbar from './components/navbar';
-
+import MCQComponent from './components/mcqquiz';
 const App = () => {
 
   const flashcards = [
@@ -13,13 +13,17 @@ const App = () => {
     { question: 'A ray of light coming from the point (1, 2) is reflected at a point A on the x–axis and then passes through the point (5, 3). The coordinates of the point A are (x, y). Find 5x + y.', answer: '13' },
     
   ];
+  const mcqData = {
+    question: 'What is the capital of France?',
+    options: ['Berlin', 'London', 'Paris', 'Madrid'],
+  };
 
   return (
     <div className="app">
       <Navbar />
 
       {/* <h1 className='text-center '>Learn for JEE using Flashcards!!</h1> */}
-      
+      <div className='fs-2 flash'> Flashcards </div>
       <div className="flashcard-container flex">
         {flashcards.map((flashcard, index) => (
           <Flashcard
@@ -29,7 +33,9 @@ const App = () => {
           />
         ))}
       </div>
+      {/* <MCQComponent question={mcqData.question} options={mcqData.options} /> */}
     </div>
+    
   );
 };
 
