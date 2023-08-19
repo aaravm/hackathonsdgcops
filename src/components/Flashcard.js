@@ -8,7 +8,7 @@ const Flashcard = ({ question, answer }) => {
   };
 
   return (
-    <div className="flashcard" onClick={toggleAnswer}>
+    <div className="flashcard flex-auto" onClick={toggleAnswer}>
       <div className={`flashcard-inner ${showAnswer ? 'flipped' : ''}`}>
         <div className="flashcard-front">{question}</div>
         <div className="flashcard-back">{answer}</div>
