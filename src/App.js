@@ -31,10 +31,10 @@ const App = () => {
 
   return (
     <div className="app">
-      <Navbar />
+      <Navbar flash={'#flashcarddiv'} mc={'#mc'} />
 
       <h1 className='text-center '>Learn for JEE using Flashcards!!</h1>
-      <h2> Flashcards </h2>
+      <h2 id='flashcarddiv'> Flashcards </h2>
       <div className="flashcard-container flex">
         {flashcards.map((flashcard, index) => (
           <Flashcard
@@ -44,7 +44,7 @@ const App = () => {
           />
         ))}
       </div>
-      <h2>MCQ's</h2>
+      <h2 id='mc'>MCQ's</h2>
       <MCQComponent
         question={mcq[0].question}
         options={mcq[0].options}
